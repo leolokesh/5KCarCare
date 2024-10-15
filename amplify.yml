@@ -42,6 +42,7 @@ test:
       commands:
         - 'echo "No tests configured"'
   artifacts:
+    baseDirectory: /  # Specify the root directory
     files:
       - '**/*'  # Include all files as test artifacts
 
