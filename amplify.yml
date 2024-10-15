@@ -10,14 +10,13 @@ frontend:
         - 'pip3 install -r requirements.txt'
     build:
       commands:
-        # Run the Streamlit app on port 80
+        # Run the Streamlit app on port 80 after dependencies are installed
         - 'streamlit run chatbot.py --server.port=80'
   artifacts:
-    # This is the output directory where Amplify will look for your app build. 
-    # Since Streamlit apps are run directly, no actual artifacts are needed.
-    baseDirectory: /  # Streamlit doesn't produce build artifacts, root directory suffices
+    # Since Streamlit apps run directly, no actual artifacts are needed.
+    baseDirectory: /  # Specify the root directory
     files:
-      - '**/*'  # You can specify files, but for Streamlit, leave this as all files
+      - '**/*'
   cache:
     # Caching to speed up build times (optional)
     paths:
@@ -44,7 +43,7 @@ test:
   artifacts:
     baseDirectory: /  # Specify the root directory
     files:
-      - '**/*'  # Include all files as test artifacts
+      - '**/*'
 
 customHeaders:
   # Add custom headers to the web app
