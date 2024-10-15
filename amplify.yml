@@ -10,8 +10,8 @@ frontend:
         - 'pip3 install -r requirements.txt'
     build:
       commands:
-        # Build your Streamlit app (if necessary, e.g., compiling assets or similar tasks)
-        - 'echo "No build step needed for Streamlit"'
+        # Run the Streamlit app on port 80
+        - 'streamlit run chatbot.py'
   artifacts:
     # This is the output directory where Amplify will look for your app build. 
     # Since Streamlit apps are run directly, no actual artifacts are needed.
