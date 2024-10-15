@@ -41,6 +41,9 @@ test:
     test:
       commands:
         - 'echo "No tests configured"'
+  artifacts:
+    files:
+      - '**/*'  # Include all files as test artifacts
 
 customHeaders:
   # Add custom headers to the web app
